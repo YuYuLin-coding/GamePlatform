@@ -11,6 +11,8 @@ uvicorn = {extras = ["standard"], version = "*"}
 gunicorn = "*"
 passlib = "*"
 bcrypt = "*"
+mysql-connector-python = "*"
+mysqlclient = "==2.1.1"
 
 [dev-packages]
 
@@ -19,4 +21,4 @@ python_version = "3.10"
 python_full_version = "3.10.10"
 
 [scripts]
-start = "python start.py"
+start = "gunicorn -c gunicorn_conf.py  app.main:app"

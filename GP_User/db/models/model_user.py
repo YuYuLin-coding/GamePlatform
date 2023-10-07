@@ -54,7 +54,7 @@ class DBMemberLevel(Base):
     description: str = Column(String(200), nullable=True)
 
     users = relationship("DBUser", back_populates="member_level")
-    permissions = relationship("Permission", secondary=member_level_permissions, back_populates="member_levels")
+    permissions = relationship("DBPermission", secondary=member_level_permissions, back_populates="member_levels")
 
 
 @dataclass

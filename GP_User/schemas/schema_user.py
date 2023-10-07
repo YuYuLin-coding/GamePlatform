@@ -8,7 +8,7 @@ class MemberLevelSchema(BaseModel):
     description: str
     
     class Config:
-        orm_mode = True
+        from_attributes = True # orm 改為 from_attributes
 
 class UserSchema(BaseModel):
     user_id: str
@@ -16,13 +16,13 @@ class UserSchema(BaseModel):
     is_active: Optional[bool]
     member_level: MemberLevelSchema  # 表達 User 與 MemberLevel 的關聯
     user_token: Optional[str]
-    
+
     class Config:
-        orm_mode = True
+        from_attributes = True
 
 class PermissionSchema(BaseModel):
     permission_name: str
     description: Optional[str]
     
     class Config:
-        orm_mode = True
+        from_attributes = True

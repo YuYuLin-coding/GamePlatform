@@ -2,7 +2,7 @@ from fastapi import FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import JSONResponse
 # 引入你的路由模組
-from .api import your_api_router 
+from app.api import api_user
 
 app = FastAPI()
 
@@ -27,7 +27,7 @@ def read_root():
     return {"Hello": "World"}
 
 # import 分支router
-app.include_router()
+app.include_router(api_user.router)
 
 @app.exception_handler(HTTPException)  # HTTP異常類型
 async def http_exception_handler(request, exc):
