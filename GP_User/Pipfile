@@ -11,8 +11,8 @@ uvicorn = {extras = ["standard"], version = "*"}
 gunicorn = "*"
 passlib = "*"
 bcrypt = "*"
-mysql-connector-python = "*"
 mysqlclient = "==2.1.1"
+mysql-connector-python = "==8.0.32"
 
 [dev-packages]
 

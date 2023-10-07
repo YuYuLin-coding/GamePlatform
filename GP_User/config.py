@@ -9,7 +9,7 @@ class Config(object):
         password=os.getenv('DB_PASS', 'password'),
         host=os.getenv('DB_HOST', 'localhost'),
         port=os.getenv('DB_PORT', 3306),
-        db=os.getenv('DB_NAME', 'gp'),
+        db=os.getenv('DB_NAME', 'gpuser'),
         args=os.getenv('DB_ARGUMENTS', '?charset=utf8mb4')
     )
     SECRET_PEPPER = "ChangeYourOwnKeyHere"
