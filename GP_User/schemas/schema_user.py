@@ -3,26 +3,21 @@ from pydantic import BaseModel
 from typing import Optional
 
 class MemberLevelSchema(BaseModel):
-    idx: int
+    idx: Optional[int] = None
     member_level: str
-    description: str
-    
-    class Config:
-        from_attributes = True # orm 改為 from_attributes
+    description: Optional[str] = None
 
 class UserSchema(BaseModel):
     user_id: str
-    password: Optional[str]
-    is_active: Optional[bool]
-    member_level: MemberLevelSchema  # 表達 User 與 MemberLevel 的關聯
-    user_token: Optional[str]
+    password: Optional[str] = None
+    is_active: Optional[bool] = None
+    member_level: Optional[str] = None
+    user_token: Optional[str] = None
 
     class Config:
-        from_attributes = True
+        from_attributes = True # orm_mode 改為 from_attributes
 
 class PermissionSchema(BaseModel):
     permission_name: str
-    description: Optional[str]
-    
-    class Config:
-        from_attributes = True
+    description: Optional[str] = None
+    member_level: Optional[str] = None

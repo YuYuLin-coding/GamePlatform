@@ -3,6 +3,7 @@ from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import JSONResponse
 # 引入你的路由模組
 from app.api import api_user
+from app.auth import authentication
 
 app = FastAPI()
 
@@ -27,6 +28,7 @@ def read_root():
     return {"Hello": "World"}
 
 # import 分支router
+app.include_router(authentication.router)
 app.include_router(api_user.router)
 
 @app.exception_handler(HTTPException)  # HTTP異常類型

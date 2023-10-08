@@ -13,3 +13,4 @@ class Config(object):
         args=os.getenv('DB_ARGUMENTS', '?charset=utf8mb4')
     )
     SECRET_PEPPER = "ChangeYourOwnKeyHere"
+    JWT_ACCESS_TOKEN_EXPIRES_DAYS = 7

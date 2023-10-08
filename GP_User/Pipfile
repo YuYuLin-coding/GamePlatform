@@ -13,6 +13,7 @@ passlib = "*"
 bcrypt = "*"
 mysqlclient = "==2.1.1"
 mysql-connector-python = "==8.0.32"
+python-jose = "*"
 
 [dev-packages]
 
