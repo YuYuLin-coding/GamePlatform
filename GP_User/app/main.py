@@ -7,6 +7,10 @@ from app.auth import authentication
 
 app = FastAPI()
 
+origins = [
+    "http://0.0.0.0:8080",  # 前端地址
+]
+
 app.add_middleware(
     CORSMiddleware,
     allow_origins=["*"],
