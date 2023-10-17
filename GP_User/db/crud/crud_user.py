@@ -88,3 +88,11 @@ def create_member_level(db: Session, request: MemberLevelSchema):
     db.commit()
     db.refresh(new_member)
     return new_member
+
+def delete_member_level(db: Session, member_level: str):
+    member = db.query(DBMembergroup).filter(DBMembergroup.member_level == member_level).first()
+    if not member:
+        raise HTTPException(status_code=400, detail="Member is not found")
+    db.delete(member)
+    db.commit()
+    return f'Member {member_level} is deleted successfully.'

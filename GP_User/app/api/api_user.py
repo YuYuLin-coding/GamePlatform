@@ -45,3 +45,8 @@ def delete_user(user_id: int, db: Session = Depends(get_db), current_user: DBUse
 def create_member(member: schema_user.MemberLevelSchema, db: Session = Depends(get_db)):
     new_member = crud_user.create_member_level(db, member)
     return new_member
+
+@router.post("/member/delete")
+def create_member(member_level: str, db: Session = Depends(get_db)):
+    result = crud_user.delete_member_level(db, member_level)
+    return result
