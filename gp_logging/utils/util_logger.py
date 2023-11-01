@@ -15,7 +15,7 @@ RUN_MODE = Config.RUN_MODE
 
 class Logger:
 
-    def __init__(self, name):
+    def __init__(self, name="gplogger"):
         log_format = (
             "%(asctime)s - "
             "%(name)s - "

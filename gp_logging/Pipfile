@@ -7,9 +7,17 @@ name = "pypi"
 fastapi = {extras = ["all"], version = "*"}
 uvicorn = "*"
 colorlog = "*"
+httpx = "*"
+sqlalchemy = "*"
+alembic = "*"
+mysql-connector-python = "==8.0.32"
+mysqlclient = "==2.1.1"
 
 [dev-packages]
 
 [requires]
 python_version = "3.10"
 python_full_version = "3.10.10"
+
+[scripts]
+start = "uvicorn app.main:app --host 0.0.0.0 --port 80"
